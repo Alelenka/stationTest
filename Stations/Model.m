@@ -70,8 +70,34 @@
     }
     self.stationsTo = stTo;
     
-//    self.stationsFrom = [self.allData objectForKey:@"citiesFrom"];
-//    self.stationsTo = [self.allData objectForKey:@"citiesTo"];
+}
+
+
+-(NSArray *)searchForText:(NSString *)searchWord withDestinationState:(DestinationState)state{
+    if([searchWord isEqualToString:@""]){
+        return [self getStationsType:state];
+    }
+    
+    NSArray *searchIn = @[];
+    NSMutableArray *searchResult = [NSMutableArray array];
+    if (state) {
+        searchIn = self.stationsTo;
+    } else {
+        searchIn = self.stationsFrom;
+    }
+    for (TownStation* item in searchIn){
+        NSMutableArray *newStations = [NSMutableArray array];
+        for (NSDictionary * station in item.stations) {
+            if ([[station objectForKey:@"stationTitle"] rangeOfString:searchWord].location != NSNotFound){
+                [newStations addObject:station];
+            }
+        }
+        if(newStations.count > 0){ //create new TownStation object for search
+            [searchResult addObject:[[TownStation alloc] initWithName:item.name andStation:newStations]];
+        }
+    }
+        return searchResult;
+
 }
 
 

@@ -15,4 +15,6 @@
 
 -(instancetype)initWithInfo:(NSDictionary *)info;
 
+-(instancetype)initWithName:(NSString *)name andStation:(NSArray *)stations;
+
 @end

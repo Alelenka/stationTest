@@ -177,12 +177,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" id="Bam-uG-Hhd">
+                        <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Поиск станции" id="kSN-Fa-fjX">
                             <rect key="frame" x="0.0" y="64" width="600" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
                             <connections>
-                                <outlet property="delegate" destination="F6U-50-Muf" id="V4S-Iy-ZId"/>
+                                <outlet property="delegate" destination="F6U-50-Muf" id="JX8-Yq-Vmq"/>
                             </connections>
                         </searchBar>
                         <prototypes>
@@ -194,6 +194,26 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="nothingFound" id="2nl-ae-Dur">
+                                <rect key="frame" x="0.0" y="202" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2nl-ae-Dur" id="OYp-Jj-Zi3">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ничего не найдено" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="73h-7Z-icd">
+                                            <rect key="frame" x="223" y="11" width="155" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="73h-7Z-icd" firstAttribute="centerY" secondItem="OYp-Jj-Zi3" secondAttribute="centerY" id="NZJ-5q-LMb"/>
+                                        <constraint firstItem="73h-7Z-icd" firstAttribute="centerX" secondItem="OYp-Jj-Zi3" secondAttribute="centerX" id="Uii-S4-y6f"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="F6U-50-Muf" id="1OV-rW-MwX"/>
@@ -202,6 +222,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Станции" id="dx0-PL-Hl6"/>
                     <connections>
+                        <outlet property="searchBar" destination="kSN-Fa-fjX" id="0Ha-ns-IdA"/>
                         <outlet property="searchDisplayController" destination="AEO-2y-tIT" id="RA0-il-CBy"/>
                     </connections>
                 </tableViewController>
@@ -209,7 +230,6 @@
                 <searchDisplayController id="AEO-2y-tIT">
                     <connections>
                         <outlet property="delegate" destination="F6U-50-Muf" id="QhP-3p-IUH"/>
-                        <outlet property="searchBar" destination="Bam-uG-Hhd" id="v9v-V3-cB6"/>
                         <outlet property="searchContentsController" destination="F6U-50-Muf" id="EIe-no-nzU"/>
                         <outlet property="searchResultsDataSource" destination="F6U-50-Muf" id="Upe-Jq-duX"/>
                         <outlet property="searchResultsDelegate" destination="F6U-50-Muf" id="fQk-8X-CCb"/>

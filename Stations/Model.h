@@ -17,6 +17,7 @@ typedef NS_ENUM(short, DestinationState) {
 
 + (instancetype)sharedInstance;
 - (NSArray *)getStationsType:(DestinationState)state;
--(void)checkAndGetFile;
+- (void)checkAndGetFile;
+- (NSArray *)searchForText:(NSString *)searchWord withDestinationState:(DestinationState)state;
 
 @end

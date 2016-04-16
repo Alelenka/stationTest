@@ -12,6 +12,8 @@
 
 @interface StationTableViewController () <UISearchBarDelegate>
 @property (nonatomic, strong) NSArray *tableData;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (nonatomic, strong) NSThread *thread;
 
 @end
 
@@ -43,26 +45,42 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    if(self.tableData.count == 0){
+        return 1;
+    }
     return self.tableData.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if(self.tableData.count == 0){
+        return 1;
+    }
     TownStation *townSt = [self.tableData objectAtIndex:section];
     NSArray *stations = townSt.stations;
     return [stations count];
 }
 
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    if(self.tableData.count == 0){
+        return @"";
+    }
     TownStation *townSt = [self.tableData objectAtIndex:section];
     return townSt.name;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    if(self.tableData.count == 0){
+        return 0.0;
+    }
     return 30.0;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if(self.tableData.count == 0){
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"nothingFound" forIndexPath:indexPath];
+        return cell;
+    }
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"stationCell" forIndexPath:indexPath];
     TownStation *townSt = [self.tableData objectAtIndex:indexPath.section];
     NSArray *stations = townSt.stations;
@@ -90,6 +108,93 @@
                           cancelButtonTitle:@"OK"
                           otherButtonTitles:nil] show];
 }
+
+#pragma mark - UISearchBarDelegate
+
+- (void) searchBarTextDidBeginEditing:(UISearchBar *)searchBar
+{
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+    [searchBar setShowsCancelButton:YES animated:YES];
+}
+
+- (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar
+{
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+    [searchBar setShowsCancelButton:NO animated:YES];
+    [searchBar resignFirstResponder];
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
+{
+    [self onCancelSearch:searchBar];
+}
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
+{
+    [self onSearchTextChanged:searchText];
+}
+
+
+- (void)onCancelSearch:(id)sender {
+    BOOL needResearch = self.searchBar.text.length == 0;
+    self.searchBar.text = @"";
+    [self.searchBar resignFirstResponder];
+    if (needResearch || self.tableData.count == 0) { //if search or search result empty
+        self.tableData = [[NSMutableArray alloc] init];
+        [self onSearchTextChanged:nil];
+    }
+}
+
+
+- (void)onSearchTextChanged:(id)sender {
+//    [self.activityIndicator startAnimating];
+    
+    [self.thread cancel];
+    self.thread = [[NSThread alloc] initWithTarget:self selector:@selector(search:) object:self.searchBar.text];
+    [self.thread start];
+}
+
+- (void)search:(NSString *)text {
+    NSArray *data = [[NSMutableArray alloc] init];
+    data = [[Model sharedInstance] searchForText:text withDestinationState:self.destinationState];
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.tableData = data;
+        [self.tableView reloadData];
+//        [self.activityIndicator stopAnimating];
+    });
+}
+
+//- (void)keyboardWillShow:(NSTimeInterval)duration keyboardFrame:(NSValue *)keyboardFrame {
+//        //    [self.keyboardHelper show];
+//    
+//    CGRect rect = [keyboardFrame CGRectValue];
+//    
+//    self.tableBottomConstraint.constant = rect.size.height - self.tabBarController.tabBar.height;
+//    [self.view setNeedsUpdateConstraints];
+//    [UIView animateWithDuration:duration
+//                     animations:^{
+//                         [self.view layoutIfNeeded];
+//                     }];
+//}
+//
+//- (void)keyboardWillHide:(NSTimeInterval)duration {
+//    self.tableBottomConstraint.constant = 0;
+//    [self.view setNeedsUpdateConstraints];
+//    [UIView animateWithDuration:duration
+//                     animations:^{
+//                         [self.view layoutIfNeeded];
+//                     }completion:^(BOOL finished) {
+//                         if(self.iAmiPad){
+//                             [self selectRow];
+//                         }
+//                     }];
+//    
+//    if (self.searchBar.text.length == 0) {
+//        [self onCancelSearch:nil];
+//    }
+//}
+
 
 
 @end

@@ -19,4 +19,14 @@
     return self;
 }
 
+
+-(instancetype)initWithName:(NSString *)name andStation:(NSArray *)stations{
+    self = [super init];
+    if(self){
+        self.name = name;
+        self.stations = stations;
+    }
+    return self;
+}
+
 @end
