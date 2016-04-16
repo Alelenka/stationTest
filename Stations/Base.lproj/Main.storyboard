@@ -146,8 +146,8 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="dfX-Fh-g5j"/>
                                 <exclude reference="Oex-Tv-YIm"/>
+                                <exclude reference="dfX-Fh-g5j"/>
                                 <exclude reference="oYM-6B-8eN"/>
                                 <exclude reference="eVi-j1-PVk"/>
                                 <exclude reference="naR-vs-jOO"/>
