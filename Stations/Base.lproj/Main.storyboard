@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="MWo-wE-PPm">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--О приложении-->
+        <scene sceneID="E9g-sA-NFi">
+            <objects>
+                <viewController id="HBE-5r-1JZ" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="78B-m2-nCx"/>
+                        <viewControllerLayoutGuide type="bottom" id="nvT-kx-2nN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UCj-FK-Ac8">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ROD-Jn-yIv">
+                                <rect key="frame" x="279" y="260" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7On-i7-wtF">
+                                <rect key="frame" x="279" y="320" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ROD-Jn-yIv" firstAttribute="centerX" secondItem="UCj-FK-Ac8" secondAttribute="centerX" id="3Ab-nV-5Ci"/>
+                            <constraint firstItem="ROD-Jn-yIv" firstAttribute="centerY" secondItem="UCj-FK-Ac8" secondAttribute="centerY" constant="-30" id="7R3-MG-HvV"/>
+                            <constraint firstItem="7On-i7-wtF" firstAttribute="centerX" secondItem="UCj-FK-Ac8" secondAttribute="centerX" id="NRs-Rt-Oa8"/>
+                            <constraint firstItem="7On-i7-wtF" firstAttribute="centerY" secondItem="UCj-FK-Ac8" secondAttribute="centerY" constant="30" id="lTL-TS-6IC"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="О приложении" id="U9O-K7-UWv"/>
+                    <connections>
+                        <outlet property="copyrightLabel" destination="ROD-Jn-yIv" id="jxw-dG-0dR"/>
+                        <outlet property="versionLabel" destination="7On-i7-wtF" id="lZG-8a-xwy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6AH-3y-SZd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1623" y="828"/>
+        </scene>
+        <!--Расписание-->
+        <scene sceneID="R8M-bR-uSZ">
+            <objects>
+                <viewController id="oh1-FE-Fkj" customClass="MainViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="C7i-P9-Bdl"/>
+                        <viewControllerLayoutGuide type="bottom" id="qzP-d4-c0F"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Qfh-Xk-p54">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Откуда" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VJm-Kd-iz7">
+                                <rect key="frame" x="271" y="84" width="58" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Куда" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iZR-ub-DhT">
+                                <rect key="frame" x="281" y="185" width="39" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="91l-lR-oX9">
+                                <rect key="frame" x="230" y="125" width="140" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="Nts-Hp-VXC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Выбрать откуда">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="chooseFromWhere:" destination="oh1-FE-Fkj" eventType="touchUpInside" id="HuM-uv-eMb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="trU-Ug-2qV">
+                                <rect key="frame" x="230" y="226" width="140" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="daH-8U-CtR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Выбрать куда">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="chooseWhere:" destination="oh1-FE-Fkj" eventType="touchUpInside" id="vHK-MJ-9nq"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Когда" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3aH-uE-B88">
+                                <rect key="frame" x="277" y="286" width="47" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <datePicker contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="vv6-Wm-Byg">
+                                <rect key="frame" x="0.0" y="322" width="600" height="229"/>
+                                <color key="backgroundColor" red="0.88235294119999996" green="0.90588235289999997" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="220" id="GSv-K9-mQ3"/>
+                                </constraints>
+                                <date key="date" timeIntervalSinceReferenceDate="482493091.53022897">
+                                    <!--2016-04-16 09:51:31 +0000-->
+                                </date>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="GSv-K9-mQ3"/>
+                                    </mask>
+                                </variation>
+                            </datePicker>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="VJm-Kd-iz7" firstAttribute="top" secondItem="C7i-P9-Bdl" secondAttribute="bottom" constant="20" id="2FG-Xm-oV9"/>
+                            <constraint firstItem="trU-Ug-2qV" firstAttribute="top" secondItem="iZR-ub-DhT" secondAttribute="bottom" constant="20" id="4EB-Gr-2e0"/>
+                            <constraint firstItem="VJm-Kd-iz7" firstAttribute="centerX" secondItem="Qfh-Xk-p54" secondAttribute="centerX" id="4Pr-C7-JZx"/>
+                            <constraint firstItem="trU-Ug-2qV" firstAttribute="width" secondItem="91l-lR-oX9" secondAttribute="width" id="8LT-dK-RLz"/>
+                            <constraint firstItem="vv6-Wm-Byg" firstAttribute="leading" secondItem="Qfh-Xk-p54" secondAttribute="leadingMargin" constant="-20" id="Ayg-9s-qSS"/>
+                            <constraint firstItem="vv6-Wm-Byg" firstAttribute="bottom" secondItem="Qfh-Xk-p54" secondAttribute="bottomMargin" id="Oex-Tv-YIm"/>
+                            <constraint firstItem="iZR-ub-DhT" firstAttribute="top" secondItem="91l-lR-oX9" secondAttribute="bottom" constant="30" id="QXe-gp-NMR"/>
+                            <constraint firstItem="vv6-Wm-Byg" firstAttribute="top" secondItem="3aH-uE-B88" secondAttribute="bottom" constant="15" id="SvE-hk-OFL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vv6-Wm-Byg" secondAttribute="trailing" constant="-20" id="T1O-3X-fey"/>
+                            <constraint firstItem="trU-Ug-2qV" firstAttribute="centerX" secondItem="Qfh-Xk-p54" secondAttribute="centerX" id="Vfy-gh-UEa"/>
+                            <constraint firstItem="91l-lR-oX9" firstAttribute="centerX" secondItem="Qfh-Xk-p54" secondAttribute="centerX" id="VtA-y9-oYH"/>
+                            <constraint firstItem="3aH-uE-B88" firstAttribute="top" secondItem="trU-Ug-2qV" secondAttribute="bottom" constant="30" id="Yyo-Pp-zYM"/>
+                            <constraint firstItem="qzP-d4-c0F" firstAttribute="top" secondItem="vv6-Wm-Byg" secondAttribute="bottom" id="Zt9-I2-aRz"/>
+                            <constraint firstItem="iZR-ub-DhT" firstAttribute="centerX" secondItem="Qfh-Xk-p54" secondAttribute="centerX" id="bwO-nG-Atd"/>
+                            <constraint firstItem="trU-Ug-2qV" firstAttribute="top" secondItem="iZR-ub-DhT" secondAttribute="bottom" constant="15" id="dfX-Fh-g5j"/>
+                            <constraint firstItem="3aH-uE-B88" firstAttribute="centerY" secondItem="Qfh-Xk-p54" secondAttribute="centerY" id="eVi-j1-PVk"/>
+                            <constraint firstItem="3aH-uE-B88" firstAttribute="top" secondItem="trU-Ug-2qV" secondAttribute="bottom" constant="30" id="naR-vs-jOO"/>
+                            <constraint firstItem="iZR-ub-DhT" firstAttribute="top" secondItem="91l-lR-oX9" secondAttribute="bottom" constant="30" id="oYM-6B-8eN"/>
+                            <constraint firstItem="91l-lR-oX9" firstAttribute="top" secondItem="VJm-Kd-iz7" secondAttribute="bottom" constant="20" id="qdB-VT-jd3"/>
+                            <constraint firstItem="3aH-uE-B88" firstAttribute="centerX" secondItem="Qfh-Xk-p54" secondAttribute="centerX" id="tuc-W0-3qu"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="dfX-Fh-g5j"/>
+                                <exclude reference="Oex-Tv-YIm"/>
+                                <exclude reference="oYM-6B-8eN"/>
+                                <exclude reference="eVi-j1-PVk"/>
+                                <exclude reference="naR-vs-jOO"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="Расписание" id="gXv-Y2-Zis"/>
+                    <connections>
+                        <outlet property="chooseFromWhereButton" destination="91l-lR-oX9" id="s5Q-Fy-OVa"/>
+                        <outlet property="chooseWhereButton" destination="trU-Ug-2qV" id="D5A-Fz-Egw"/>
+                        <outlet property="datePicker" destination="vv6-Wm-Byg" id="xdi-rd-bMP"/>
+                        <outlet property="fromWhereLable" destination="VJm-Kd-iz7" id="039-vk-mkF"/>
+                        <outlet property="toWhereLabel" destination="iZR-ub-DhT" id="NEL-i6-lgo"/>
+                        <outlet property="whenLabel" destination="3aH-uE-B88" id="Tpb-C7-PVg"/>
+                        <segue destination="F6U-50-Muf" kind="show" identifier="ShowStationScreen" id="JO7-mA-Lpd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HXj-PU-Fhs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1624" y="167"/>
+        </scene>
+        <!--Станции-->
+        <scene sceneID="ieA-Qb-r5a">
+            <objects>
+                <tableViewController id="F6U-50-Muf" customClass="StationTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="1" id="hJw-KZ-oV9">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="Bam-uG-Hhd">
+                            <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="F6U-50-Muf" id="V4S-Iy-ZId"/>
+                            </connections>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="detailButton" indentationWidth="10" reuseIdentifier="stationCell" id="2M3-Iz-E5m">
+                                <rect key="frame" x="0.0" y="158" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2M3-Iz-E5m" id="02j-T1-fWq">
+                                    <rect key="frame" x="0.0" y="0.0" width="553" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="F6U-50-Muf" id="1OV-rW-MwX"/>
+                            <outlet property="delegate" destination="F6U-50-Muf" id="ip9-mn-D2n"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Станции" id="dx0-PL-Hl6"/>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="AEO-2y-tIT" id="RA0-il-CBy"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jjl-Ur-MR6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="AEO-2y-tIT">
+                    <connections>
+                        <outlet property="delegate" destination="F6U-50-Muf" id="QhP-3p-IUH"/>
+                        <outlet property="searchBar" destination="Bam-uG-Hhd" id="v9v-V3-cB6"/>
+                        <outlet property="searchContentsController" destination="F6U-50-Muf" id="EIe-no-nzU"/>
+                        <outlet property="searchResultsDataSource" destination="F6U-50-Muf" id="Upe-Jq-duX"/>
+                        <outlet property="searchResultsDelegate" destination="F6U-50-Muf" id="fQk-8X-CCb"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="2370" y="167"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="RoI-bR-ycD">
+            <objects>
+                <tabBarController id="MWo-wE-PPm" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="KQY-01-8qa">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="yJh-i9-lev" kind="relationship" relationship="viewControllers" id="EpZ-Ov-bXE"/>
+                        <segue destination="7Q9-rc-msE" kind="relationship" relationship="viewControllers" id="8D3-AY-8hR"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EH7-XZ-twt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-8" y="497"/>
+        </scene>
+        <!--Расписание-->
+        <scene sceneID="4b4-Zu-33E">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yJh-i9-lev" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Расписание" image="icon_schedule" id="fAh-1X-leN"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="MVC-ki-R3P">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="oh1-FE-Fkj" kind="relationship" relationship="rootViewController" id="Taj-jP-3NA"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fy1-bg-sPf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="812" y="167"/>
+        </scene>
+        <!--О приложении-->
+        <scene sceneID="9Lo-Mw-CBt">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7Q9-rc-msE" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="О приложении" image="icon_about" id="jAO-UK-Mce"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eCr-hz-qY5">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="HBE-5r-1JZ" kind="relationship" relationship="rootViewController" id="9QC-bc-Riz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RGa-Oz-qi4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="811" y="828"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="icon_about" width="25" height="25"/>
+        <image name="icon_schedule" width="25" height="25"/>
+    </resources>
+</document>
